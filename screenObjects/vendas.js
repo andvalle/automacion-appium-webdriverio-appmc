@@ -1,7 +1,10 @@
 import { $ } from '@wdio/globals'
 import Variables from './variables'
+import SwipeCarrossel from './swipeCarrosselParaFrente'
+
 
 const variables = new Variables()
+const swipcarrossel = new SwipeCarrossel()
 
 class Vendas {
     async CenarioBase(){ 
@@ -58,5 +61,29 @@ class Vendas {
       await driver.pause(900)
       await btnCont.click()
     }
-   
+
+    /*  async ealm003() {
+    const produto = await $(variables.getALC().btnSelecAlc);
+    await produto.waitForDisplayed({ timeout: 10000 });
+    await produto.click();
+  }*/
+
+      // Swipe horizontal na tela, posição aproximada do carrossel
+  
+ 
+
+  /**
+   * Fluxo completo: swipe + seleção do produto
+   */
+  async ealm003(vezes = 1) {
+    await driver.pause(2000); // garante que a tela carregou
+    await swipcarrossel.getCarrossel(vezes); // rola 1 vez (ajuste se precisar)
+    await swipcarrossel.selecionarProduto();
+
+    /*const bigmac = await $(variables.getBicMac().bigmacAlc)
+    await bigmac.waitForDisplayed({ timeout : 5000})
+    await driver.pause(2000)
+    await bigmac.click()*/
+       
+  }
 } export default Vendas

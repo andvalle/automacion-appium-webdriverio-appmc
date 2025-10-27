@@ -21,7 +21,59 @@ class Common {
       await closeButton.click()
               
     }
+    async entregaEalm(){
 
+      
+    //aqui escolhe onde vai ser entregue ex: balcao, curb, ealm ou drive
+      const btnEalm = await $(variables.getOpcaoRetirar().btnSelecEalm)
+      await btnEalm.waitForDisplayed ({ timeout : 50000 })
+      await driver.pause(900)
+      await btnEalm.click()
+
+      const btnParaLevar = await $(variables.getOpcaoRetirar().btnParaLevar)
+      await btnParaLevar.waitForDisplayed ({ timeout : 50000 })
+      await driver.pause(900)
+      await btnParaLevar.click()
+
+      const closeButton = await $(variables.getOpcaoRetirar().btnCloseButton)
+      await driver.pause (9000)
+      await closeButton.click()
+              
+    }
+    async entregaCurb(){
+    //aqui escolhe onde vai ser entregue ex: balcao, curb, ealm ou drive
+      const btnCurb = await $(variables.getOpcaoRetirar().btnSelecCurb)
+      await btnCurb.waitForDisplayed ({ timeout : 50000 })
+      await driver.pause(900)
+      await btnCurb.click()
+
+      const btnParaLevar = await $(variables.getOpcaoRetirar().btnParaLevar)
+      await btnParaLevar.waitForDisplayed ({ timeout : 50000 })
+      await driver.pause(900)
+      await btnParaLevar.click()
+
+      const closeButton = await $(variables.getOpcaoRetirar().btnCloseButton)
+      await driver.pause (9000)
+      await closeButton.click()
+              
+    }
+    async entregaDT(){
+    //aqui escolhe onde vai ser entregue ex: balcao, curb, ealm ou drive
+      const btnDT = await $(variables.getOpcaoRetirar().btnSelecDT)
+      await btnDT.waitForDisplayed ({ timeout : 50000 })
+      await driver.pause(900)
+      await btnDT.click()
+
+      const btnParaLevar = await $(variables.getOpcaoRetirar().btnParaLevar)
+      await btnParaLevar.waitForDisplayed ({ timeout : 50000 })
+      await driver.pause(900)
+      await btnParaLevar.click()
+
+      const closeButton = await $(variables.getOpcaoRetirar().btnCloseButton)
+      await driver.pause (9000)
+      await closeButton.click()
+              
+    }
 
     async escolhaMeuM(){
         

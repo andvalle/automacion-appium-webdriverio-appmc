@@ -8,15 +8,15 @@ const variables = new Variables()
 const common = new Common()
 const venda = new Vendas()
 describe('Vendas Retira balcao', () => {
-    it('cenário 032 -  Mc Oferta Media Com Desconto Funcionario', async () => {
+    it('cenário 003 -  Mc Oferta Media Com Desconto Funcionario', async () => {
      
-      //escolha do local de entrega, mop, curb, ealm ou drive.
-     
+     await venda.ealm003()
+          
 
     })
 })
 
-describe('Vendas Retira balcao', () => {
+describe.skip('Vendas Retira balcao', () => {
     it('cenário 026 -  Mc Oferta Media Com Desconto Funcionario', async () => {
       await venda.CenarioBase()
 

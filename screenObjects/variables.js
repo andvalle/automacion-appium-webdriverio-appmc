@@ -5,6 +5,7 @@ import { $ } from '@wdio/globals'
   
     getBtnMcOferta (){
         const getBtn = {
+            carrosselCategorias: 'android=new UiSelector().description("viewCategoriesList")',
             btnMcoferta:'android=new UiSelector().text("McOfertas")',
             btnSelecMcOferta:`android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("McOferta Média Big Mac")`,
             btnAcomp1:'android=new UiSelector().className("android.widget.Button").instance(1)',
@@ -18,16 +19,34 @@ import { $ } from '@wdio/globals'
             btnPagar:'android=new UiSelector().text("Pagar")',
             btnRetirar:'//android.widget.TextView[@text="Opções de retirada"]',
             btnCont:'android=new UiSelector().text("Continuar")',
+          
           }
           return getBtn
     } 
-         getOpcaoRetirar(){
-          const opcaoRetirada = {
+    getALC(){
+     const getBtnAlc = {
+            btnSelecAlc:'//android.widget.TextView[@text="Sanduíches"]/parent::android.view.View[@clickable="true"]'
+
+      } 
+       return getBtnAlc
+
+    }  
+    getOpcaoRetirar(){
+          const retiraMop = {
+            btnSelecDT:'android=new UiSelector().text("Por Drive-Thru")',
             btnSelecBalc:'android=new UiSelector().text("No balcão")',
+            btnSelecCurb:'android=new UiSelector().text("No estacionamento")',
+            btnSelecEalm:'android=new UiSelector().text("Na Mesa")',
             btnParaLevar:'android=new UiSelector().text("Para levar")',
-            btnCloseButton:'~closeBackButton' 
-            }
-          return opcaoRetirada
-        }
+            btnCloseButton:'~closeBackButton'
+            } 
+            return retiraMop
+        } 
+        getBicMac(){
+          const getbigmac = {
+              bigmacAlc: `//android.widget.TextView[@content-desc="tvCategoryName" and @text="Sanduíches"]`
+          }
+          return getbigmac 
+        } 
 } export default  Variables
 
