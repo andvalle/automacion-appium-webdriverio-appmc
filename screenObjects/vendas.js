@@ -75,10 +75,11 @@ class Vendas {
   /**
    * Fluxo completo: swipe + seleção do produto
    */
-  async ealm003(vezes = 1) {
-    await driver.pause(2000); // garante que a tela carregou
-    await swipcarrossel.getCarrossel(vezes); // rola 1 vez (ajuste se precisar)
-    await swipcarrossel.selecionarProduto();
+  async ealm003(carrossel, sanduiches) {
+    await driver.pause(4000); // garante que a tela carregou
+    await swipcarrossel.getCarrossel(); // rola 1 vez (ajuste se precisar)
+    await swipcarrossel.selecionarProduto(carrossel, sanduiches);
+
 
     /*const bigmac = await $(variables.getBicMac().bigmacAlc)
     await bigmac.waitForDisplayed({ timeout : 5000})

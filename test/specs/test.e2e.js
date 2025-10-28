@@ -10,7 +10,7 @@ const venda = new Vendas()
 describe('Vendas Retira balcao', () => {
     it('cenário 003 -  Mc Oferta Media Com Desconto Funcionario', async () => {
      
-     await venda.ealm003()
+     await venda.ealm003(variables.getALC().swipCarrossel, variables.getALC().btnSanduiches)
           
 
     })

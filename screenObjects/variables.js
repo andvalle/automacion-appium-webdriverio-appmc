@@ -25,9 +25,9 @@ import { $ } from '@wdio/globals'
     } 
     getALC(){
      const getBtnAlc = {
-            btnSelecAlc:'//android.widget.TextView[@text="Sanduíches"]/parent::android.view.View[@clickable="true"]'
-
-      } 
+            swipCarrossel:'android=new UiScrollable(new UiSelector().description("viewCategoriesList")).setAsHorizontalList().scrollForward().scrollForward()',
+            btnSanduiches:'android=new UiSelector().text("Sanduíches")'
+     }
        return getBtnAlc
 
     }  

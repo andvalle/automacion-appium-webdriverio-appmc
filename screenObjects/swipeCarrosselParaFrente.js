@@ -35,13 +35,17 @@ async getCarrossel(vezes = 1) {
   }
 
   
-   async selecionarProduto() {
-    await driver.pause(1000)
-    const produto = await $('android=new UiScrollable(new UiSelector().description("viewCategoriesList"))' +
-    '.setAsHorizontalList()' + '.scrollIntoView(new UiSelector().text("Sanduíches"))')
-    await produto.waitForDisplayed({ timeout: 5000 });
-    await driver.pause(1000)
-    await produto.click();
+   async selecionarProduto(seletor, sanduiches) {
+    await driver.pause(2000)
+    const carrosselProd= await $(seletor)
+    await carrosselProd.waitForDisplayed({ timeout: 5000 })
+    await driver.pause(4000)
+
+     const btnSanduiches = await $(sanduiches)
+     btnSanduiches.waitForDisplayed ({ timeout : 5000})
+     await driver.pause (3000)
+     btnSanduiches.click()
+    await driver.pause (1000)
   }
 
 } export default SwipeCarrossel
