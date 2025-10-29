@@ -10,7 +10,7 @@ const venda = new Vendas()
 describe('Vendas Retira balcao', () => {
     it('cenário 003 -  Mc Oferta Media Com Desconto Funcionario', async () => {
      
-     await venda.ealm003(variables.getALC().swipCarrossel, variables.getALC().btnSanduiches)
+     await venda.ealm003('Sanduíches')
           
 
     })
@@ -19,7 +19,7 @@ describe('Vendas Retira balcao', () => {
 describe.skip('Vendas Retira balcao', () => {
     it('cenário 026 -  Mc Oferta Media Com Desconto Funcionario', async () => {
       await venda.CenarioBase()
-
+      await common.concluirVenda()
       //escolha do local de entrega, mop, curb, ealm ou drive.
       await common.entregaMop()
 
