@@ -105,7 +105,7 @@ class Common {
       await driver.pause(900)
       await btnCont.click()
     }
-    //suipe vertifical carrossel, passar o produto a ser selecionado
+    //suipe horizontal carrossel, passar o produto a ser selecionado
     async suipeCarrossel(produto){
 
         const carrossel = variables.getALC().swipCarrossel
