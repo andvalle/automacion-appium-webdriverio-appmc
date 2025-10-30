@@ -15,12 +15,11 @@ describe('Vendas Retira balcao', () => {
      await common.descontoProduto()
      await common.concluirVenda()
      await common.entregaMop()
-          
-
+  
     })
 })
 
-describe.skip('Vendas Retira balcao - MOP', () => {
+describe('Vendas Retira balcao - MOP', () => {
     it('cenário MOP 116 -  Mc Oferta Media Com Desconto Funcionario', async () => {
       await venda.mop116()
       await common.concluirVenda()

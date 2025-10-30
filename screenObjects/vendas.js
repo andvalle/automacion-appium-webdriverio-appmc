@@ -34,6 +34,9 @@ class Vendas {
 
       const btnCoca1 = await $(variables.getProdutos().clickCoca)
       await btnCoca1.click()
+      await driver.pause(2000)
+      await common.addProdutoBag()
+
      
   }
 
