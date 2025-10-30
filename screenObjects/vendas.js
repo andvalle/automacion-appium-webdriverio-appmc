@@ -9,15 +9,18 @@ const common = new Common()
 class Vendas {
     async mop116(){ 
             
-      const carrosselProd = await $(variables.getProdutos().btnMcoferta)
-      await carrosselProd.waitForDisplayed({ timeout : 2000})
-      await carrosselProd.click();
+      const carrosselProd = await $(variables.getProdutos().carrosselCategorias)
 
-      const selecMcoferta = await $(variables.getProdutos().btnSelecMcOferta);
-      await selecMcoferta.waitForDisplayed({ timeout : 2000})
-      await driver.pause(900)
-      await selecMcoferta.click()
+      const categMcOferta = await $(variables.getProdutos().btnMcoferta)
+      await categMcOferta.waitForDisplayed({ timeout : 2000})
+      await driver.pause(2000)
+      await categMcOferta.click()
 
+      const prodMcOferta = await $(variables.getProdutos().btnSelecMcOferta)
+      await prodMcOferta.waitForDisplayed({ timeout : 4000})
+      await driver.pause(2000)
+      await prodMcOferta.click()
+      
       const selecAcomp = await $(variables.getProdutos().btnAcomp1)
       await driver.pause(900)
       await selecAcomp.click()

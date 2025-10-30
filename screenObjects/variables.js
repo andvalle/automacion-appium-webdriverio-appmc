@@ -5,9 +5,9 @@ import { $ } from '@wdio/globals'
   
     getProdutos (){
         const getBtn = {
-            carrosselCategorias: 'android=new UiSelector().description("viewCategoriesList")',
+            carrosselCategorias: 'android=new UiScrollable(new UiSelector().description("viewCategoriesList")).setAsHorizontalList().scrollForward()',
             btnMcoferta:'android=new UiSelector().text("McOfertas")',
-            btnSelecMcOferta:`android=new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("McOferta Média Big Mac")`,
+            btnSelecMcOferta:`android=new UiSelector().text("McOferta Média Big Mac")`,
             btnAcomp1:'android=new UiSelector().className("android.widget.Button").instance(1)',
             btnAcomp2:'android=new UiSelector().text("McFritas Média")',
             selecDrk:'android=new UiSelector().className("android.widget.Button").instance(2)',

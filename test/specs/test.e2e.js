@@ -21,6 +21,7 @@ describe('Vendas Retira balcao', () => {
 
 describe('Vendas Retira balcao - MOP', () => {
     it('cenário MOP 116 -  Mc Oferta Media Com Desconto Funcionario', async () => {
+      await driver.pause(5000)
       await venda.mop116()
       await common.concluirVenda()
       //escolha do local de entrega, mop, curb, ealm ou drive.
