@@ -3,7 +3,7 @@ import { $ } from '@wdio/globals'
   
  class Variables{
   
-    getBtnMcOferta (){
+    getProdutos (){
         const getBtn = {
             carrosselCategorias: 'android=new UiSelector().description("viewCategoriesList")',
             btnMcoferta:'android=new UiSelector().text("McOfertas")',
@@ -19,7 +19,14 @@ import { $ } from '@wdio/globals'
             btnPagar:'android=new UiSelector().text("Pagar")',
             btnRetirar:'//android.widget.TextView[@text="Opções de retirada"]',
             btnCont:'android=new UiSelector().text("Continuar")',
+            carrosselBig:`android=new UiSelector().text("Big Mac")`,
+            btnDesceProm:'android=new UiSelector().text("Descontos e promoções")',
+            campoCupom:'~textSimpleEditTextLabel',
+            retiraDesc: '~employeeDiscount',
+            campoCupomText:'~textSimpleEditTextValue',
+            btnAplicarCupom:'android=new UiSelector().text("Aplicar")'
           
+
           }
           return getBtn
     } 
