@@ -135,12 +135,7 @@ class Common {
 
       //aplica desconto BIGMAC10R 
       async descontoProduto (){
-      /* const btnAdd = await $(variables.getProdutos().btnAdd)
-      await btnAdd.click()
-
-      const addtoBag = await $ (variables.getProdutos().addToBag)
-      await addtoBag.click()
-      await driver.pause(3000) */
+      
 
       const descprom = await $(variables.getProdutos().btnDesceProm)
       await descprom.waitForDisplayed ({timeout:3000})
@@ -168,7 +163,7 @@ class Common {
        .down()
        .up()
        .perform();
-  
+    //botao de aplicar o cupom
     const aplicarCupom = await $(variables.getProdutos().btnAplicarCupom) 
     await aplicarCupom.waitForDisplayed ({ timeout : 2000})
     await driver.pause(1000)
@@ -177,8 +172,20 @@ class Common {
   }
     async escolhaMeuM(){  
         
+  }
+  //esse metodo adiciona grio ao passar a quantidade de grill na chamada..
+   async addGrill (qtdGrill){
+    for (let i=0; i<=qtdGrill-1; i++){
+      const btnGrill = await $(`android=new UiSelector().description("btnAdd").instance(${i})`)
+      await driver.pause(2000)
+      await btnGrill.click()
+      await pause(1000)
+      const btnSalvar= await $(variables.getProdutos().btnSalvarGrill)
+      await btnSalvar.click()
     }
-   
 
+    
+
+   }
 
 } export default Common

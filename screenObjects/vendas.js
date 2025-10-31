@@ -49,11 +49,36 @@ class Vendas {
     await driver.pause(4000)
     await common.suipeVertical()
     await driver.pause (2000)
+
     const bigmac = $(variables.getProdutos().carrosselBig)
     await bigmac.waitForDisplayed ({timeout : 8000})
     await bigmac.click()
     await driver.pause(2000)
     await common.addProdutoBag()
 
+  }
+  async mop113(produto, qtdGrill) {
+    await driver.pause(4000); // garante que a tela carregou
+    await common.suipeCarrossel(produto)
+    await driver.pause(4000)
+    await common.suipeVertical()
+    await driver.pause (2000)
+    
+    const bigmac = $(variables.getProdutos().carrosselBig)
+    await bigmac.waitForDisplayed ({timeout : 8000})
+    await bigmac.click()
+    await driver.pause(2000)
+
+    const btnGrill = await $(variables.getProdutos().btnGrill)
+    await btnGrill.waitForDisplayed ({timeout : 2000})
+    await driver.pause(1000)
+    await btnGrill.click()
+    await driver.pause(3000)
+    await common.addGrill(qtdGrill)
+    
+
+   
+
+  
   }
 } export default Vendas

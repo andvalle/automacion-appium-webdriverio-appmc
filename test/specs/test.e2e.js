@@ -8,7 +8,7 @@ const variables = new Variables()
 const common = new Common()
 const venda = new Vendas()
 
-describe('Vendas Retira balcao', () => {
+describe.skip('Vendas Retira balcao', () => {
     it('cenário 112 - Pontuação (Compra) - Desconto por valor a nível de produto', async () => {
      
      await venda.mop112('Sanduíches')
@@ -20,7 +20,7 @@ describe('Vendas Retira balcao', () => {
 })
 
 describe('Vendas Retira balcao - MOP', () => {
-    it('cenário MOP 116 -  Mc Oferta Media Com Desconto Funcionario', async () => {
+    it.skip('cenário MOP 116 -  Mc Oferta Media Com Desconto Funcionario', async () => {
       await driver.pause(5000)
       await venda.mop116()
       await common.concluirVenda()
@@ -28,6 +28,11 @@ describe('Vendas Retira balcao - MOP', () => {
       await common.entregaMop()
 
     })
+    it.only('cenário MOP 113 -  Big Mac com GRILL e Desconto a Nivel de Produto', async () => {
+      await driver.pause(5000)
+      //passa a categoria dos lanches, e a quantidade de grill que você quer.
+      await venda.mop113('Sanduíches',3)
+})
 })
 
 

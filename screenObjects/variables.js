@@ -24,9 +24,10 @@ import { $ } from '@wdio/globals'
             campoCupom:'~textSimpleEditTextLabel',
             retiraDesc: '~employeeDiscount',
             campoCupomText:'~textSimpleEditTextValue',
-            btnAplicarCupom:'android=new UiSelector().text("Aplicar")'
+            btnAplicarCupom:'android=new UiSelector().text("Aplicar")',
+            btnGrill: 'android=new UiSelector().text("Personalização e extras")',
+            btnSalvarGrill:'android=new UiSelector().text("Salvar")'
           
-
           }
           return getBtn
     } 
